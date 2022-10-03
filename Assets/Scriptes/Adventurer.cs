@@ -56,6 +56,7 @@ public class Adventurer
     // Update is called once per frame
     void Update()
     {
+        /*
         if (!m_userJump && (m_Grounded || doubleJump > 0) && !m_Anim.GetBool("shte")){
             if (m_Grounded)
             {
@@ -63,6 +64,8 @@ public class Adventurer
             }
             m_userJump = Input.GetButtonDown("Jump");
         }
+        */
+        
         if (!m_user_shte)
         {
             m_user_shte = Input.GetButtonDown("shte");
@@ -83,18 +86,7 @@ public class Adventurer
         
         sprite.color = Color.white;
         Vector2 t_feetPos = new Vector2(feetPosition.position.x, feetPosition.position.y);
-        
-        
-        // test floors and celling
-        m_Grounded = Physics2D.OverlapCircle(t_feetPos, k_Radius, m_WhatIsGround);
-        if (!crouch)
-        {
-            // If the character has a ceiling preventing them from standing up, keep them crouching
-            if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_Radius, m_WhatIsGround))
-            {
-                crouch = true;
-            }
-        }
+        /*
         m_Anim.SetBool("Grounded", m_Grounded);
         
         // orientation
@@ -122,6 +114,7 @@ public class Adventurer
             m_userJump = false;
             m_ARB.AddForce(new Vector2(0f, Jumpforce), ForceMode2D.Impulse);
         }
+        */
         
         // shte
         if (m_user_shte)
