@@ -2,23 +2,24 @@ using UnityEngine;
 using UnityEngine.Events;
 using System;
 
-public class CharacterController2D : MonoBehaviour
+public class PlayerController2D : MonoBehaviour
 {
-	[SerializeField] private float m_JumpForce = 400f;							// Amount of force added when the player jumps.
-	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
+	[SerializeField] private float m_JumpForce = 450f;							// Amount of force added when the player jumps.
+	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .5f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = false;							// Whether or not a player can steer while jumping;
 	[SerializeField] private LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
 	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
 	[SerializeField] private Collider2D m_CrouchDisableCollider;				// A collider that will be disabled when crouching
-
-	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
+	private Animator m_Anim;
+	const float k_GroundedRadius = .3f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
-	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
+	const float k_CeilingRadius = .3f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
+	private int m_doubleJump = 1;
 
 	[Header("Events")]
 	[Space]
@@ -34,6 +35,7 @@ public class CharacterController2D : MonoBehaviour
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
+		m_Anim  = GetComponent<Animator>();
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
@@ -56,13 +58,18 @@ public class CharacterController2D : MonoBehaviour
 			{
 				m_Grounded = true;
 				if (!wasGrounded)
+				{
 					OnLandEvent.Invoke();
+					m_doubleJump = 1;
+				}
 			}
 		}
+
+		m_Anim.SetBool("Grounded", m_Grounded);
 	}
 
 
-	public void Move(float move, bool crouch, bool jump)
+	public void Move(float move, bool crouch, bool jump, bool shte)
 	{
 		// If crouching, check to see if the character can stand up
 		if (!crouch)
@@ -71,6 +78,11 @@ public class CharacterController2D : MonoBehaviour
 			if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
 			{
 				crouch = true;
+				m_Anim.SetBool("croush", true);
+			}
+			else
+			{
+				m_Anim.SetBool("croush", false);
 			}
 		}
 
@@ -81,6 +93,7 @@ public class CharacterController2D : MonoBehaviour
 			// If crouching
 			if (crouch)
 			{
+				m_Anim.SetBool("croush", true);
 				if (!m_wasCrouching)
 				{
 					m_wasCrouching = true;
@@ -124,12 +137,17 @@ public class CharacterController2D : MonoBehaviour
 				Flip();
 			}
 		}
+		
 		// If the player should jump...
-		if (m_Grounded && jump)
+		if (jump && (m_Grounded || m_doubleJump > 0) && !shte)
 		{
-			// Add a vertical force to the player.
-			m_Grounded = false;
+			m_Anim.SetTrigger("JumpTrigger");
+			if (!m_Grounded) {
+				m_doubleJump -= 1;
+			}
+			jump = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			//m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce), ForceMode2D.Impulse);
 		}
 	}
 
@@ -143,5 +161,7 @@ public class CharacterController2D : MonoBehaviour
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+		
+		
 	}
 }

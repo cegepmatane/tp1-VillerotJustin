@@ -11,12 +11,12 @@ public class Campfire : MonoBehaviour
     
     public void OnTriggerEnter2D(Collider2D collision)
     { 
-        Adventurer t_Player = collision.gameObject.GetComponent<Adventurer>(); 
-        
+        PlayerMain t_Player = collision.gameObject.GetComponent<PlayerMain>();
+
         if (t_Player && ((CD + last_hit) <= Time.time))
         {
             Debug.Log("Player Hit");
-            t_Player.TakeDamage(1);
+            t_Player.PlayerHealthManagment.TakeDamage(1);
             last_hit = Time.time;
         }
     }

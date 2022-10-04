@@ -11,7 +11,7 @@ public class DeathMenu : MonoBehaviour
         Debug.Log("test");
         
         // Reload
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("Game", LoadSceneMode.Single);
         Time.timeScale = 1;
     }
 }
