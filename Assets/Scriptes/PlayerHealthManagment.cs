@@ -13,8 +13,8 @@ public class PlayerHealthManagment : PlayerMain
     
     // life var
     private RaycastHit2D _hit;
-    protected int Life = 3;
-    protected int MaxLife = 3;
+    protected int Life = 100;
+    protected int MaxLife = 100;
     
     // stam  var
     protected int Stam = 3;
