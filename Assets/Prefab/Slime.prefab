@@ -137,8 +137,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e1a5f587fd4a4a9b78e707cb225425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 3
   m_audioClip:
   - {fileID: 8300000, guid: b4683891a71c4449099dc4f8aeec6f4c, type: 3}
+  m_DeathSound: {fileID: 8300000, guid: fbfeca48d295a7dbb8adb3ae8457a40a, type: 3}
 --- !u!82 &-5206428486276988624
 AudioSource:
   m_ObjectHideFlags: 0

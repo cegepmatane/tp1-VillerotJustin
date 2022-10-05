@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerAttack : PlayerMain
 {
     
+    [SerializeField] private Collider2D m_AttackEnableCollider;				// A collider that will be enabled when attacking
     
     // attack var
     
@@ -42,10 +43,30 @@ public class PlayerAttack : PlayerMain
         // attack
         if (m_Anim.GetBool("Attack"))
         {
+            StartCoroutine(CR_Attack());
             m_Anim.SetBool("Attack", false);
             m_Anim.SetTrigger("AttackTrigger");
         }
 
+    }
+    
+    IEnumerator CR_Attack()
+    {
+        m_AttackEnableCollider.enabled = true;
+        yield return new WaitForSeconds(0.2f);
+        m_AttackEnableCollider.enabled = false;
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Monster t_monster = collision.gameObject.GetComponent<Monster>();
+        
+        if (t_monster)
+        {
+            Debug.Log("Monster Hit");
+            t_monster.Death();
+        }
     }
 
     public void setStam(int stam)

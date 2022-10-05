@@ -13004,6 +13004,7 @@ MonoBehaviour:
   PlayerAttack: {fileID: 0}
   PlayerHealthManagment: {fileID: 0}
   PlayerMovement: {fileID: 0}
+  m_AttackEnableCollider: {fileID: 2028862457}
   Stam: 0
 --- !u!61 &2028862456
 BoxCollider2D:
@@ -13041,7 +13042,7 @@ PolygonCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.17, y: 0}
@@ -14432,6 +14433,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8414533974303570574, guid: 851e986f81e556d069e63490ba134b48, type: 3}
+      propertyPath: m_DeathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: fbfeca48d295a7dbb8adb3ae8457a40a, type: 3}
     - target: {fileID: 8414533974303570574, guid: 851e986f81e556d069e63490ba134b48, type: 3}
       propertyPath: m_audioClip.Array.size
       value: 2
