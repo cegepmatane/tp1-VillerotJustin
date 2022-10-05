@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerMovement : PlayerMain
 {
-    private PlayerController2D PlayerController2D;
+    public PlayerController2D PlayerController2D;
 
     // movement var
     private float horizontalInput = 0f;

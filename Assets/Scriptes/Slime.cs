@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster : MonoBehaviour
+public class Slime : MonoBehaviour
 {
 
     public float Speed = 3f;
@@ -25,20 +25,12 @@ public class Monster : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         PlayerMain t_Player = collision.gameObject.GetComponent<PlayerMain>();
-        string t_name = collision.collider.name;
 
         if (t_Player && ((CD + last_hit) <= Time.time))
         {
             Debug.Log("Player Hit");
-            t_Player.PlayerHealthManagment.TakeDamage(1,"");
+            t_Player.PlayerHealthManagment.TakeDamage(1,"slimy");
             last_hit = Time.time;
-        }
-
-        
-        Debug.Log(t_name);
-
-        if (t_name == "Blade") {
-            Destroy(gameObject);
         }
     }
 

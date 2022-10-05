@@ -71,12 +71,26 @@ public class PlayerHealthManagment : PlayerMain
     
     
     
-    public void TakeDamage(int a_Damage){
+    public void TakeDamage(int a_Damage, String a_effect){
+        Debug.Log("TakeDamage : " + a_Damage + " " + a_effect);
+        Debug.Log("Life : " + Life);
         Life-=a_Damage;
         HPUIVar.ChangeHP(Life);
+        Debug.Log("Life af : " + Life);
 
-        StartCoroutine(CR_Flash());
-        
+        switch (a_effect)
+        { 
+            case "": 
+                StartCoroutine(CR_Flash());
+                break; 
+            case "slimy":
+               StartCoroutine(CR_Slimy());
+               break;
+            case "fire":
+                StartCoroutine(CR_Flame());
+               break;
+        }
+
         if(Life<=0){
             Die();
         }
@@ -92,6 +106,34 @@ public class PlayerHealthManagment : PlayerMain
             yield return new WaitForSeconds(0.2f);
         }
         m_sprite.color = Color.white;
+    }
+    IEnumerator CR_Flame()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            m_sprite.color = Color.clear;
+            yield return new WaitForSeconds(0.2f);
+            m_sprite.color = Color.yellow;
+            yield return new WaitForSeconds(0.2f);
+        }
+        m_sprite.color = Color.yellow;
+        yield return new WaitForSeconds(3f);
+        m_sprite.color = Color.white;
+    }
+    
+    IEnumerator CR_Slimy()
+    {
+        PlayerMovement.PlayerController2D.m_MovementSmoothing = 0.5f;
+        for (int i = 0; i < 4; i++)
+        {
+            m_sprite.color = Color.clear;
+            yield return new WaitForSeconds(0.2f);
+            m_sprite.color = Color.green;
+            yield return new WaitForSeconds(0.2f);
+        }
+        yield return new WaitForSeconds(3f);
+        m_sprite.color = Color.white;
+        PlayerMovement.PlayerController2D.m_MovementSmoothing = 0.05f;
     }
     
     public void Heal(int a_Heal){
