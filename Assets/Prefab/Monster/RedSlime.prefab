@@ -162,8 +162,8 @@ MonoBehaviour:
   Speed: 3
   m_DeathSound: {fileID: 8300000, guid: fbfeca48d295a7dbb8adb3ae8457a40a, type: 3}
   m_HurtSound: {fileID: 8300000, guid: 4189e62adb5247aebbdeafb2afe3682d, type: 3}
-  m_LandingSound: {fileID: 0}
-  m_jumpSound: {fileID: 0}
+  m_LandingSound: {fileID: 8300000, guid: b4683891a71c4449099dc4f8aeec6f4c, type: 3}
+  m_jumpSound: {fileID: 8300000, guid: 97d61c1b4b69f30ac9c447ef64b033ee, type: 3}
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 8
@@ -225,7 +225,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

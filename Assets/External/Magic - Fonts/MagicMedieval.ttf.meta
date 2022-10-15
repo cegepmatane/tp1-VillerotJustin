@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: 5fd5d12f94af90bfc9907b060c303453
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - MagicMedieval
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 3ce58ed27e3431e6e99d436a49cd5ce7, type: 3}
+  - {fileID: 12800000, guid: e19f394fb546f29fe8d0f650f2ced323, type: 3}
+  - {fileID: 12800000, guid: c8ec8142686191c5fbe52552fe909850, type: 3}
+  - {fileID: 12800000, guid: 6c14469b9c0acad41975e6269bb0a682, type: 3}
+  - {fileID: 12800000, guid: c89a4343a044f82dbbd6ad271a71e782, type: 3}
+  - {fileID: 12800000, guid: 1194e90078013a281b0d8c6e5e6d2085, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

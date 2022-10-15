@@ -25,12 +25,13 @@ public class Monster : MonoBehaviour
     protected int Life = 5;
     protected int MaxLife = 5;
     
-    // stam  var
+    /* stam  var
     protected int Stam = 3;
     protected int tmp_Stamp = 3;
     protected int MaxStam = 3;
     private float last_regen;
     private float CD_regen = 2f;
+    */
     
     //attack var
     protected float last_hit;

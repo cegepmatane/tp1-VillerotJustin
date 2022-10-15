@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 7d981dac34d90d755a63f29a9b414a48
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Beleren
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: fad4a0bcf5966de2cb0400cf821df235, type: 3}
+  - {fileID: 12800000, guid: bcad9dc100d3030979fdc34e94644e72, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

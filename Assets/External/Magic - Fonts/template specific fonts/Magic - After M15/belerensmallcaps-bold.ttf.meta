@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: cffc935f66430f4e88d8036e9c943e3e
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Beleren Small Caps
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5368d8ea59cad580190a007da9ed4790, type: 3}
+  - {fileID: 12800000, guid: bcaad72c24d04911b8f8ad1c51a4f756, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

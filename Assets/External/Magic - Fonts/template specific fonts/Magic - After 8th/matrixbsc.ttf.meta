@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 468de36023050edbda5926d5e6113b07
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - MatrixBoldSmallCaps
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e16dec2f6d6c7def1a826b38e03176ad, type: 3}
+  - {fileID: 12800000, guid: f3c6f24385eeebe5ab1baf158199af01, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

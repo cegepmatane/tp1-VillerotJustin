@@ -152,9 +152,7 @@ public class PlayerHealthManagment : PlayerMain
 
     private void Die(){
         AudioManager.instance.playSound(sounds[2]);
-        
-        // show menu
-        m_Anim.SetBool("Dead", true);
-        DeathScreen.SetActive(true);
+        LevelManager.instance.GameOver();
+        gameObject.SetActive(false);
     }
 }

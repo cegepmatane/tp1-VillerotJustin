@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 9dad8ee869bfe93a2902c2f6d1e7d388
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - MPlantin
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 7937da6640f22423093eb1d9e1abcb75, type: 3}
+  - {fileID: 12800000, guid: 7034e47d02bf1fd1195fdfb2ec720d9f, type: 3}
+  - {fileID: 12800000, guid: 8c42d8685e3e33ab8953000e77773930, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
