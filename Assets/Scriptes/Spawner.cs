@@ -16,25 +16,17 @@ public class Spawner : MonoBehaviour
         InvokeRepeating("Spawn", 5f, 5f);
     }
 
-
-    // Update is called once per frame
-    void Update()
+    private void Spawn()
     {
-        /*
         if (m_LastSpawn + spawn_CD <= Time.time)
         {
             GameObject t_Instance = Instantiate(Prefab, transform.position, Quaternion.identity);
             m_LastSpawn = Time.time;
-            monster_speed = Random.Range(-5f, 5f);
+            monster_speed = UnityEngine.Random.Range(-5f, 5f);
             t_Instance.GetComponent<Monster>().Speed = monster_speed;
 
         }
-        */
-    }
-
-    private void Spawn()
-    {
-        Instantiate(Prefab, transform.position, Quaternion.identity);
+        
     }
 
 }
