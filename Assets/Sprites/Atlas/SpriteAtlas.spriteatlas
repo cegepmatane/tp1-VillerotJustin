@@ -56,6 +56,7 @@ SpriteAtlas:
   - {fileID: -8839626087033448230, guid: bfeede70efd14484683f5956b4f1194b, type: 3}
   - {fileID: 21300000, guid: b65e609029e63999797b497ca39a2af6, type: 3}
   - {fileID: 21300000, guid: a1d2e6a06b46c0f95b95e852c81b7389, type: 3}
+  - {fileID: 21300000, guid: 4af2d9b05fd2f94a8aba002f3df027c3, type: 3}
   - {fileID: 21300000, guid: 15d416e0f374348c3adebade8aa7c2c9, type: 3}
   - {fileID: 4404395261052358378, guid: 37aa7ae02881d0f4b8b5e32919646456, type: 3}
   - {fileID: 1777014292035581766, guid: 37aa7ae02881d0f4b8b5e32919646456, type: 3}
@@ -80,6 +81,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 574681c1c8eb645d6b863624e0f77900, type: 3}
   - {fileID: 21300000, guid: a1629dc10668840468b403328a978f9e, type: 3}
   - {fileID: 21300000, guid: 727288f1643e62812a5d0a81902f43fa, type: 3}
+  - {fileID: 21300000, guid: 3b2f2712700451ab69f2fec9072f6471, type: 3}
   - {fileID: 21300000, guid: d6065d12a40178830aa73d831924dce7, type: 3}
   - {fileID: 21300000, guid: 84873522082196348b931e3f46de09e9, type: 3}
   - {fileID: 21300000, guid: 2511d2522c4422850b2efaee29e47894, type: 3}
@@ -144,6 +146,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: c90ccc83efe9e53f39b2cd1e8b7ce114, type: 3}
   - {fileID: 21300000, guid: fc36f7b324ab4b816ad2dc9946d38adb, type: 3}
   - {fileID: 21300000, guid: 92e4a8b3d88f9096597e5b3869415751, type: 3}
+  - {fileID: 21300000, guid: 6ee9ecb3ac9358c698e8e60f3ebeee9f, type: 3}
   - {fileID: 21300000, guid: b7b74cc35018bb83fa5927990da8d63b, type: 3}
   - {fileID: 21300000, guid: 7ef610e397cf358af8d8533b01f23149, type: 3}
   - {fileID: 21300000, guid: 712f50e368cef5eb48a8f4f834dba231, type: 3}
@@ -291,6 +294,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: b6e69ad6958760b60b92a633503f5224, type: 3}
   - {fileID: 21300000, guid: ad62f6e697fcb5e9ebb2e874d0e385bb, type: 3}
   - {fileID: 21300000, guid: addb6be6394ba681fbb07ddc57ab6ce6, type: 3}
+  - {fileID: 21300000, guid: 6b44dcf65ae2c7065b02b592973a2dda, type: 3}
   - {fileID: 21300000, guid: cc09830753fc5f023ad43c39cc7a5fc4, type: 3}
   - {fileID: 21300000, guid: a7946227221b47c6aa2625f601160938, type: 3}
   - {fileID: 21300040, guid: f5091b27a656f437094000095b53c3e9, type: 3}
@@ -389,6 +393,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 8b3eacc75fd88d0d08a5588125e920e9, type: 3}
   - {fileID: 21300000, guid: 71be7ec7699bc0a5d867ba67aad07cbc, type: 3}
   - {fileID: 21300000, guid: 500590d7c4392d0cda23680340a693cc, type: 3}
+  - {fileID: 21300000, guid: 66ab06f7519a9fd18a440b5f9ff74755, type: 3}
   - {fileID: 21300000, guid: 1f8b2ef7ca75b498e8cb63c582be2901, type: 3}
   - {fileID: 21300000, guid: f2d02c083da0af34694a332bfb59df53, type: 3}
   - {fileID: 21300000, guid: e50e46286bb67739fb273d1abdb3c5a5, type: 3}
@@ -411,6 +416,7 @@ SpriteAtlas:
   - {fileID: 2277713452295504747, guid: e67eef88a5c0e5246b9c0e1ff19d4533, type: 3}
   - {fileID: 5078594154368035550, guid: e67eef88a5c0e5246b9c0e1ff19d4533, type: 3}
   - {fileID: 21300000, guid: 7685d898e8c8ad7e495385251f40e7eb, type: 3}
+  - {fileID: 21300000, guid: 9c592cc80dacaadc7bc1f3ed7945689b, type: 3}
   - {fileID: 21300000, guid: 4e52a4d880cab9e14aebfcc81466b7c5, type: 3}
   - {fileID: 21300000, guid: 1af08ed8192ebe58987b65e74c24105a, type: 3}
   - {fileID: 624389125363875638, guid: 73f219e811965c543bd264726e841335, type: 3}
@@ -448,6 +454,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: abe50cc970667103a93278700e336a1a, type: 3}
   - {fileID: 21300000, guid: e1a0e7d91b6c37f5798f87df33d9819b, type: 3}
   - {fileID: 21300000, guid: 0bd1b1f922f223883812c51ec8704666, type: 3}
+  - {fileID: 21300000, guid: 14d7711ac140211b7be146459b3b1947, type: 3}
   - {fileID: 21300000, guid: 1a05231a1022b18c480b0beb6b013885, type: 3}
   - {fileID: 21300000, guid: 2241851a4448fd695a83b99892dedf48, type: 3}
   - {fileID: 21300000, guid: a5d46c5a3a769f63eb063c9145e5a40c, type: 3}
@@ -470,6 +477,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 9097ef5b66dfd51a792ee339cae04491, type: 3}
   - {fileID: 21300000, guid: 6b65516bb78da9d1db3df0c624280742, type: 3}
   - {fileID: 21300000, guid: 5728856b4e4e24d2194f29f07a311354, type: 3}
+  - {fileID: 21300000, guid: 6936896b6e75693fb919c077aadd339f, type: 3}
   - {fileID: 21300000, guid: bdced87b2f7f8ea9396435ffc6466fbb, type: 3}
   - {fileID: 21300000, guid: 046a978bdf663f1e39e8d2682ad34ec0, type: 3}
   - {fileID: 21300000, guid: 49b626aba77203986a33fd2017eff742, type: 3}
@@ -866,6 +874,7 @@ SpriteAtlas:
   - Sprite Sheet - Blue Idle_4
   - adventurer-crouch-walk-03
   - adventurer-die-05
+  - MovinPlatform5
   - adventurer-walk-01
   - Sprite Sheet - Green Death_2
   - Sprite Sheet - Green Death_3
@@ -890,6 +899,7 @@ SpriteAtlas:
   - adventurer-wall-slide-01
   - adventurer-get-up-00
   - adventurer-stand-02
+  - MovinPlatformNoWeel
   - adventurer-kick-00
   - ui-panels
   - adventurer-swrd-shte-00
@@ -954,6 +964,7 @@ SpriteAtlas:
   - adventurer-stand-01
   - adventurer-punch-09
   - adventurer-kick-02
+  - MovinPlatform1
   - adventurer-get-up-01
   - adventurer-kick-05
   - adventurer-bow-jump-05
@@ -1101,6 +1112,7 @@ SpriteAtlas:
   - adventurer-get-up-04
   - adventurer-air-attack2-00
   - adventurer-punch-12
+  - MovinPlatform4
   - adventurer-attack1-04
   - adventurer-crnr-clmb-02
   - cave-tileset_20
@@ -1199,6 +1211,7 @@ SpriteAtlas:
   - adventurer-crnr-grb-02
   - adventurer-kick-03
   - adventurer-punch-10
+  - MovinPlatformAnim
   - adventurer-ladder-climb-02
   - adventurer-cast-01
   - adventurer-walk-03
@@ -1221,6 +1234,7 @@ SpriteAtlas:
   - Sprite Sheet - Blue Death - No Flash_10
   - Sprite Sheet - Blue Death - No Flash_11
   - adventurer-run3-05
+  - MovinPlatform3
   - adventurer-cast-00
   - adventurer-attack1-02
   - Sprite Sheet - Red Jump Start-up_8
@@ -1258,6 +1272,7 @@ SpriteAtlas:
   - adventurer-idle-01
   - adventurer-wall-run-03
   - adventurer-get-up-06
+  - Weel
   - adventurer-run-punch-06
   - adventurer-kick-06
   - adventurer-cast-02
@@ -1280,6 +1295,7 @@ SpriteAtlas:
   - adventurer-crnr-grb-03
   - adventurer-stand-00
   - adventurer-punch-02
+  - MovinPlatform2
   - adventurer-wall-run-01
   - adventurer-air-attack2-02
   - adventurer-attack1-01

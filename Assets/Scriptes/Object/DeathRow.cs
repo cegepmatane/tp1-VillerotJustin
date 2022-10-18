@@ -4,14 +4,13 @@ using UnityEngine;
 public class DeathRow : MonoBehaviour
 {
     
-    [Header("Var")]
-    [SerializeField] private Transform m_AdventurerTransform;
+    private Transform m_AdventurerTransform;
     private Transform m_DeathRowTransform;
     
     
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
+        m_AdventurerTransform = PlayerStatManagment.instance.transform;
         m_DeathRowTransform = GetComponent<Transform>();
         m_DeathRowTransform.position = new Vector3(m_AdventurerTransform.position.x, -100, m_AdventurerTransform.position.z);
     }

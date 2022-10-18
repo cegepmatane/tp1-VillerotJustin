@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 public class StateManager : MonoBehaviour {
     
     public void RealoadCurrentScene() {
+        UIManager _ui = GetComponent<UIManager>();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         PlayerStatManagment.instance.respawn();
+        _ui.changeListener();
         PlayerStatManagment.instance.gameObject.SetActive(true);
     }
 

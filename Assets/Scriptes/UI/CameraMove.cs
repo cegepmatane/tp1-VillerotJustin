@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour {
     public float damping = 1.5f;
-    public Transform _target;
+    private Transform _target;
     public Vector2 offset = new Vector2(2f, 1f);
 
     private bool faceLeft;
@@ -12,8 +12,8 @@ public class CameraMove : MonoBehaviour {
     private float dynamicSpeed;
     private Camera _cam;
 
-    void Start()
-    {
+    void Start() {
+        _target = PlayerStatManagment.instance.transform;
         offset = new Vector2(Mathf.Abs(offset.x), offset.y);
         FindPlayer();
         _cam = gameObject.GetComponent<Camera>();

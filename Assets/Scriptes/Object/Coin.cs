@@ -8,8 +8,8 @@ public class Coin : MonoBehaviour {
     [Header("SFX")]
     [SerializeField] private AudioClip Gather;
 
-    private void OnTriggerEnter2D(Collider2D col) {
-        if (col.GetComponent<PlayerStatManagment>() != null) {
+    private void OnTriggerEnter2D(Collider2D col ) {
+        if (col.GetComponent<PlayerStatManagment>() != null && !col.isTrigger) {
             PlayerStatManagment.instance.incrementCoin();
             AudioManager.instance.playSound(Gather);
             Destroy(gameObject);

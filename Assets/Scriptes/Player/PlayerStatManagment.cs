@@ -11,18 +11,13 @@ public class PlayerStatManagment : PlayerMain
     public static PlayerStatManagment instance { get; private set; }
     private Vector3 m_spawnPosition;
     
-    [Header("UI var")]
-    public GameObject DeathScreen;
-    public HPUI HPUIVar;
-    
     // life var
     protected int Life = 5;
     protected int MaxLife = 10;
     
     // stam  var
-    protected int Stam = 3;
-    protected int tmp_Stamp = 3;
-    protected int MaxStam = 3;
+    protected int Stam = 10;
+    protected int MaxStam = 10;
     private float last_regen;
     private float CD = 2f;
     
@@ -50,6 +45,9 @@ public class PlayerStatManagment : PlayerMain
         m_ARB = GetComponent<Rigidbody2D>();
         m_sprite = GetComponent<SpriteRenderer>();
         m_spawnPosition = this.transform.position;
+        MaxLife = 10;
+        Life = MaxLife;
+        HPUI.instance.ChangeHP(Life);
     }
 
     public void LowerStam() {
@@ -57,7 +55,7 @@ public class PlayerStatManagment : PlayerMain
     }
 
     private void Update() {
-        HPUIVar.ChangeStam(Stam);
+        HPUI.instance.ChangeStam(Stam);
     }
 
     private void FixedUpdate()
@@ -72,7 +70,7 @@ public class PlayerStatManagment : PlayerMain
         {
             last_regen = Time.time;
             Stam += 1;
-            HPUIVar.ChangeStam(Stam);
+            HPUI.instance.ChangeStam(Stam);
         }
     }
 
@@ -86,7 +84,7 @@ public class PlayerStatManagment : PlayerMain
         Debug.Log("TakeDamage : " + a_Damage + " " + a_effect);
         Debug.Log("Life : " + Life);
         Life-=a_Damage;
-        HPUIVar.ChangeHP(Life);
+        HPUI.instance.ChangeHP(Life);
         Debug.Log("Life af : " + Life);
         
         AudioManager.instance.playSound(sounds[UnityEngine.Random.Range(0,1)]);
@@ -155,11 +153,7 @@ public class PlayerStatManagment : PlayerMain
         {
             Life = MaxLife;
         }
-        HPUIVar.ChangeHP(Life);
-        
-        if(Life<=0){
-            Die();
-        }
+        HPUI.instance.ChangeHP(Life);
     }
 
     private void Die(){
@@ -169,6 +163,8 @@ public class PlayerStatManagment : PlayerMain
     }
 
     public void respawn() {
-        this.transform.position = m_spawnPosition;
+        transform.position = m_spawnPosition;
+        MaxLife = 10;
+        Life = MaxLife;
     }
 }

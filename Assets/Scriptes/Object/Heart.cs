@@ -9,7 +9,7 @@ public class Heart : MonoBehaviour {
     [SerializeField] private AudioClip Gather;
 
     private void OnTriggerEnter2D(Collider2D col) {
-        if (col.GetComponent<PlayerStatManagment>() != null) {
+        if (col.GetComponent<PlayerStatManagment>() != null && !col.isTrigger) {
             PlayerStatManagment.instance.Heal(1);
             AudioManager.instance.playSound(Gather);
             Destroy(gameObject);
