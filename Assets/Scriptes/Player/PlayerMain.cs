@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerMain : MonoBehaviour
 {
+   
+    
     [Header("Subscripts")]
     public PlayerAttack PlayerAttack;
-    public PlayerHealthManagment PlayerHealthManagment;
+    [FormerlySerializedAs("PlayerHealthManagment")] public PlayerStatManagment playerStatManagment;
     public PlayerMovement PlayerMovement;
     
     // global var

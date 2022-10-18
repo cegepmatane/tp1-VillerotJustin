@@ -16,7 +16,7 @@ public class Campfire : MonoBehaviour
         if (t_Player && CD + last_hit <= Time.time && !collision.isTrigger)
         {
             Debug.Log("Player Hit");
-            t_Player.PlayerHealthManagment.TakeDamage(1,"fire");
+            t_Player.playerStatManagment.TakeDamage(1,"fire");
             last_hit = Time.time;
         }
     }

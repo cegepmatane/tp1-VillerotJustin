@@ -58,7 +58,7 @@ public class Monster : MonoBehaviour
         if (t_Player && CD + last_hit <= Time.time && !collision.collider.isTrigger)
         {
             Debug.Log("Player Hit");
-            t_Player.PlayerHealthManagment.TakeDamage(1,"");
+            t_Player.playerStatManagment.TakeDamage(1,"");
             last_hit = Time.time;
         }
     }
@@ -79,6 +79,7 @@ public class Monster : MonoBehaviour
         PlaySound(m_DeathSound);
         GetComponent<CapsuleCollider2D>().enabled = false;
         m_Anim.SetBool("Death", true);
+        SpawnManager.instance.SpawnBonus(transform);
         StartCoroutine(CR_Death());
     }
     

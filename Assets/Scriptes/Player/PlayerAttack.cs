@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerAttack : PlayerMain
 {
+
+    public static PlayerAttack instance { get; private set; }
+    
     [Header("Attack var")]
     [SerializeField] private Collider2D m_AttackEnableCollider;			// A collider that will be enabled when attacking
 
@@ -11,10 +14,23 @@ public class PlayerAttack : PlayerMain
     
     // shte
     private Boolean m_user_shte;
-    
-    // heath managment stam
-    public int Stam;
 
+    private void Awake() {
+        // keep object
+        if (instance == null){
+            instance = this;
+            DontDestroyOnLoad(this);
+        } //destroy dupli
+        else if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        m_Anim = GetComponent<Animator>();
+        m_ARB = GetComponent<Rigidbody2D>();
+        m_sprite = GetComponent<SpriteRenderer>();
+    }
+    
+    
     // Update is called once per frame
     void Update()
     {
@@ -25,7 +41,7 @@ public class PlayerAttack : PlayerMain
 
         if (m_Anim.GetBool("shte"))
         {
-            m_Anim.SetBool("Attack", Input.GetButtonDown("attack") && Stam>0);
+            m_Anim.SetBool("Attack", Input.GetButtonDown("attack") && PlayerStatManagment.instance.getStam()>0);
             // Debug.Log(Input.GetButtonDown("attack")); 
         }
     }
@@ -44,6 +60,7 @@ public class PlayerAttack : PlayerMain
         {
             AudioManager.instance.playSound(sounds[0]);
             StartCoroutine(CR_Attack());
+            PlayerStatManagment.instance.LowerStam();
             m_Anim.SetBool("Attack", false);
             m_Anim.SetTrigger("AttackTrigger");
         }
@@ -67,11 +84,6 @@ public class PlayerAttack : PlayerMain
             Debug.Log("Monster Hit");
             t_monster.Damage();
         }
-    }
-
-    public void setStam(int stam)
-    {
-        Stam = stam;
     }
     
     

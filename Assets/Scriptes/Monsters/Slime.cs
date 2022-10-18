@@ -110,7 +110,7 @@ public class Slime : Monster
         if (t_Player && CD + last_hit <= Time.time && !collision.collider.isTrigger)
         {
             Debug.Log("Player Hit");
-            t_Player.PlayerHealthManagment.TakeDamage(1,"slimy");
+            t_Player.playerStatManagment.TakeDamage(1,"slimy");
             last_hit = Time.time;
         }
     }
