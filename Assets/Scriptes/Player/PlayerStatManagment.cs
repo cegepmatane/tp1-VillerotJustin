@@ -9,6 +9,7 @@ public class PlayerStatManagment : PlayerMain
 {
 
     public static PlayerStatManagment instance { get; private set; }
+    private Vector3 m_spawnPosition;
     
     [Header("UI var")]
     public GameObject DeathScreen;
@@ -48,6 +49,7 @@ public class PlayerStatManagment : PlayerMain
         m_Anim = GetComponent<Animator>();
         m_ARB = GetComponent<Rigidbody2D>();
         m_sprite = GetComponent<SpriteRenderer>();
+        m_spawnPosition = this.transform.position;
     }
 
     public void LowerStam() {
@@ -164,5 +166,9 @@ public class PlayerStatManagment : PlayerMain
         AudioManager.instance.playSound(sounds[2]);
         LevelManager.instance.GameOver();
         gameObject.SetActive(false);
+    }
+
+    public void respawn() {
+        this.transform.position = m_spawnPosition;
     }
 }

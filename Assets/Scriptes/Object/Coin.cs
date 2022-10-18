@@ -9,8 +9,10 @@ public class Coin : MonoBehaviour {
     [SerializeField] private AudioClip Gather;
 
     private void OnTriggerEnter2D(Collider2D col) {
-        PlayerStatManagment.instance.incrementCoin();
-        AudioManager.instance.playSound(Gather);
-        Destroy(gameObject);
+        if (col.GetComponent<PlayerStatManagment>() != null) {
+            PlayerStatManagment.instance.incrementCoin();
+            AudioManager.instance.playSound(Gather);
+            Destroy(gameObject);
+        }
     }
 }
