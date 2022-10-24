@@ -47,6 +47,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: ba8f6510541e994b79cb894f63d22ae4, type: 3}
   - {fileID: 21300000, guid: 1716d640a61332e4cb2ea0fd194da8ca, type: 3}
   - {fileID: 21300000, guid: d0984740da916e3ddb6e8778b9be8925, type: 3}
+  - {fileID: 21300000, guid: 5b7d0a6024e9b2da1beee7395c9538cf, type: 3}
   - {fileID: 2186122089364987773, guid: bfeede70efd14484683f5956b4f1194b, type: 3}
   - {fileID: -99518741711876278, guid: bfeede70efd14484683f5956b4f1194b, type: 3}
   - {fileID: -3938910030919452613, guid: bfeede70efd14484683f5956b4f1194b, type: 3}
@@ -148,6 +149,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 92e4a8b3d88f9096597e5b3869415751, type: 3}
   - {fileID: 21300000, guid: 6ee9ecb3ac9358c698e8e60f3ebeee9f, type: 3}
   - {fileID: 21300000, guid: b7b74cc35018bb83fa5927990da8d63b, type: 3}
+  - {fileID: 21300000, guid: e8e1f0d305b58997cbc7701d909b8495, type: 3}
   - {fileID: 21300000, guid: 7ef610e397cf358af8d8533b01f23149, type: 3}
   - {fileID: 21300000, guid: 712f50e368cef5eb48a8f4f834dba231, type: 3}
   - {fileID: -2817490604992158882, guid: e8de27e31db64384183a462ac011c181, type: 3}
@@ -805,9 +807,11 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 0900565ecd542ff879a1cffd4e03304b, type: 3}
   - {fileID: 21300000, guid: d1bb7b6e5ec562a03920846c859715ac, type: 3}
   - {fileID: 21300000, guid: 96162c7eddb97119b8edfc7595f47643, type: 3}
+  - {fileID: 21300000, guid: def4f38ef2a8d6918aedf9246c03d65b, type: 3}
   - {fileID: 21300000, guid: 832a60aed9da428008c7e36998495486, type: 3}
   - {fileID: 21300000, guid: 295f70ae435e114a788b807c62dab6cc, type: 3}
   - {fileID: 21300000, guid: c3bc1daef5ba44d688a235ec5289bdd2, type: 3}
+  - {fileID: 21300000, guid: 7e3823be2545cef44bfc10a6d425d1cd, type: 3}
   - {fileID: 21300000, guid: e71e1ece6aa8912ddb318b3c030af219, type: 3}
   - {fileID: 21300000, guid: deb28a1f2935642b99891ed3177524e8, type: 3}
   - {fileID: -2604183472304749704, guid: 5b2a0c1fb0dae424197d767b0ba347b0, type: 3}
@@ -828,6 +832,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 934d773f096874824bd544d55c4d8538, type: 3}
   - {fileID: 21300000, guid: d19dbd3f8cadecc5e8432bbb60c8d2ed, type: 3}
   - {fileID: 21300000, guid: d239194f5b8c494fdbca7375085baf34, type: 3}
+  - {fileID: 21300000, guid: aaa74a4febb8ef5049e59519e93199f3, type: 3}
   - {fileID: 21300000, guid: bd43dd4f3900285d9be4b911da8c0f78, type: 3}
   - {fileID: 21300000, guid: 2e4c295fab3d94e2eb53e35cf2cf7112, type: 3}
   - {fileID: 21300000, guid: e217396f0a62570c096df680602554cc, type: 3}
@@ -847,6 +852,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e60eff8f3241df67a81eadffaf2f0fe1, type: 3}
   - {fileID: 21300000, guid: ce43a4bf012e622edae5d4f3cb66746c, type: 3}
   - {fileID: 21300000, guid: ef2878bf1362b9fa5bc7f8eaa6a41e9a, type: 3}
+  - {fileID: 21300000, guid: f942e9cf0cc66bd01a60fd96ee7347f8, type: 3}
   - {fileID: -7377153609105838001, guid: 324a09dfec4299c4bb2e56386d91262b, type: 3}
   - {fileID: 8103759417398486482, guid: 324a09dfec4299c4bb2e56386d91262b, type: 3}
   - {fileID: -822294439341482929, guid: 324a09dfec4299c4bb2e56386d91262b, type: 3}
@@ -865,6 +871,7 @@ SpriteAtlas:
   - adventurer-slide-00
   - adventurer-swrd-shte-01
   - adventurer-crouch-01
+  - SwordBar
   - Sprite Sheet - Blue Idle_3
   - Sprite Sheet - Blue Idle_2
   - Sprite Sheet - Blue Idle_1
@@ -966,6 +973,7 @@ SpriteAtlas:
   - adventurer-kick-02
   - MovinPlatform1
   - adventurer-get-up-01
+  - SwordBarFill
   - adventurer-kick-05
   - adventurer-bow-jump-05
   - Sprite Sheet - Red Death - No Flash_8
@@ -1623,9 +1631,11 @@ SpriteAtlas:
   - adventurer-kick-07
   - adventurer-cast-loop-00
   - adventurer-air-attack1-01
+  - heart
   - adventurer-wall-run-00
   - adventurer-knock-dwn-02
   - adventurer-run2-02
+  - GoldPanel
   - adventurer-crnr-clmb-01
   - adventurer-bow-jump-04
   - Sprite Sheet - Red Hurt_9
@@ -1646,6 +1656,7 @@ SpriteAtlas:
   - sky
   - adventurer-die-02
   - adventurer-kick-01
+  - border
   - adventurer-idle-2-00
   - sea
   - adventurer-run-punch-05
@@ -1665,6 +1676,7 @@ SpriteAtlas:
   - adventurer-attack2-00
   - adventurer-attack2-05
   - adventurer-punch-11
+  - SwordBarBorder
   - Sprite Sheet - Green Jump to Fall_0
   - Sprite Sheet - Green Jump to Fall_1
   - Sprite Sheet - Green Jump to Fall_2

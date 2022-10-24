@@ -17,6 +17,10 @@ public class CameraMove : MonoBehaviour {
         offset = new Vector2(Mathf.Abs(offset.x), offset.y);
         FindPlayer();
         _cam = gameObject.GetComponent<Camera>();
+        if (gameObject.tag.Equals("MainCamera")) {
+            UIManager _ui = LevelManager.instance.GetComponent<UIManager>();
+            _ui.m_camera = GetComponent<AudioListener>();
+        }
     }
 
     public void FindPlayer()

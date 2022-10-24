@@ -41,7 +41,6 @@ public class SpawnManager : MonoBehaviour {
             Debug.Log("Update spawn slime");
             SpawnSlime(spawnPoints[Random.Range(0, spawnPoints.Length)]);
             SpawnSlime(spawnPoints[Random.Range(0, spawnPoints.Length)]);
-            SpawnSlime(spawnPoints[Random.Range(0, spawnPoints.Length)]);
             last_Spawn = Time.time;
         }
         
@@ -56,7 +55,6 @@ public class SpawnManager : MonoBehaviour {
     }
 
     public void SpawnSlime(Transform _transform) {
-        Debug.Log("SpawnSlime");
         float _temp = Random.Range(1f,100f);
         if (_temp <= 50f) {
             GameObject t_Instance = Instantiate(slimes[0], _transform.position, Quaternion.identity);

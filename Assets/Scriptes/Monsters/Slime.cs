@@ -107,7 +107,7 @@ public class Slime : Monster
     {
         PlayerMain t_Player = collision.gameObject.GetComponent<PlayerMain>();
 
-        if (t_Player && CD + last_hit <= Time.time && !collision.collider.isTrigger)
+        if (t_Player && CD + last_hit <= Time.time && !collision.collider.isTrigger && PlayerStatManagment.instance.isNotDead())
         {
             Debug.Log("Player Hit");
             t_Player.playerStatManagment.TakeDamage(1,"slimy");

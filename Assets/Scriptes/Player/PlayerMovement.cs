@@ -34,24 +34,23 @@ public class PlayerMovement : PlayerMain
     // Update is called once per frame
     void Update()
     {
-        if (!jump && !m_Anim.GetBool("shte")){
-            jump = Input.GetButtonDown("Jump");
+        if (PlayerStatManagment.instance.isNotDead()) {
+            if (!jump && !m_Anim.GetBool("shte")){
+                jump = Input.GetButtonDown("Jump");
+            }
+        
+            if (Input.GetButtonDown("croush"))
+            {
+                crouch = true;
+            }
+            else if (Input.GetButtonUp("croush"))
+            {
+                crouch = false;
+            }
+        
+            bool shift = Input.GetButton("shift");
+            horizontalInput = Input.GetAxis("Horizontal") * ((shift && !crouch) ? RunSpeed : WalkSpeed);
         }
-        
-        if (Input.GetButtonDown("croush"))
-        {
-            crouch = true;
-        }
-        else if (Input.GetButtonUp("croush"))
-        {
-            crouch = false;
-        }
-        
-        bool shift = Input.GetButton("shift");
-        horizontalInput = Input.GetAxis("Horizontal") * ((shift && !crouch) ? RunSpeed : WalkSpeed);
-
-        
-        
     }
 
     private void FixedUpdate()

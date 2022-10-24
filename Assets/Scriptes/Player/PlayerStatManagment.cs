@@ -10,25 +10,47 @@ public class PlayerStatManagment : PlayerMain
 
     public static PlayerStatManagment instance { get; private set; }
     private Vector3 m_spawnPosition;
+
+    public delegate void OnHealthChangedDelegate();
+    public OnHealthChangedDelegate onHealthChangedCallback;
     
-    // life var
-    protected int Life = 5;
-    protected int MaxLife = 10;
+    [FormerlySerializedAs("health")]
+    [Header("Health")]
+    [SerializeField]
+    private float health;
+    [SerializeField]
+    private float maxHealth;
+    [SerializeField]
+    private float maxTotalHealth;
+    public float getHealth { get { return health; } }
+    public float getMaxHealth { get { return maxHealth; } }
+    public float getMaxTotalHealth { get { return maxTotalHealth; } }
     
     // stam  var
+    public delegate void OnStamChangedDelegate();
+    public OnStamChangedDelegate onStamChangedCallback;
     protected int Stam = 10;
     protected int MaxStam = 10;
     private float last_regen;
     private float CD = 2f;
     
     // coin var
-    protected int numberOfCoin;
+    public delegate void OnGoldChangedCallback();
+    public OnGoldChangedCallback onGoldChangedCallback;
+    private int numberOfCoin;
+    public float getNumberOfCoin { get { return numberOfCoin; } }
 
     public void incrementCoin() {
         numberOfCoin++;
+        ClampCoin();
+    }
+
+    private void ClampCoin() {
+        if (onGoldChangedCallback != null)
+            onGoldChangedCallback.Invoke();
     }
     
-    
+    // instance
     private void Awake()
     {
         gameObject.SetActive(true);
@@ -44,49 +66,47 @@ public class PlayerStatManagment : PlayerMain
         m_Anim = GetComponent<Animator>();
         m_ARB = GetComponent<Rigidbody2D>();
         m_sprite = GetComponent<SpriteRenderer>();
-        m_spawnPosition = this.transform.position;
-        MaxLife = 10;
-        Life = MaxLife;
-        HPUI.instance.ChangeHP(Life);
+        m_spawnPosition = transform.position;
+        maxHealth = 10;
+        health = maxHealth;
+        maxTotalHealth = 10;
     }
-
-    public void LowerStam() {
-        Stam--;
-    }
-
-    private void Update() {
-        HPUI.instance.ChangeStam(Stam);
-    }
-
-    private void FixedUpdate()
+    
+    // Heatlth stuff
+    
+    
+    public void Heal(float health)
     {
-        // regen stam
-        RegenStam();
+        this.health += health;
+        ClampHealth();
     }
-
-    private void RegenStam()
+    
+    public void AddHealth()
     {
-        if (((CD + last_regen) <= Time.time) && Stam < MaxStam)
+        if (maxHealth < maxTotalHealth)
         {
-            last_regen = Time.time;
-            Stam += 1;
-            HPUI.instance.ChangeStam(Stam);
+            maxHealth += 1;
+            health = maxHealth;
+            if (onHealthChangedCallback != null)
+                onHealthChangedCallback.Invoke();
+        }   
+    }
+    
+    void ClampHealth()
+    {
+        if (health <= 0) {
+            StartCoroutine(CR_Death());
         }
-    }
+        health = Mathf.Clamp(health, 0, maxHealth);
 
-    public int getStam() {
-        return Stam;
+        if (onHealthChangedCallback != null)
+            onHealthChangedCallback.Invoke();
     }
     
+    // Damage stuff
     
-    
-    public void TakeDamage(int a_Damage, String a_effect){
-        Debug.Log("TakeDamage : " + a_Damage + " " + a_effect);
-        Debug.Log("Life : " + Life);
-        Life-=a_Damage;
-        HPUI.instance.ChangeHP(Life);
-        Debug.Log("Life af : " + Life);
-        
+    public void TakeDamage(float a_Damage, String a_effect){
+        health-=a_Damage;
         AudioManager.instance.playSound(sounds[UnityEngine.Random.Range(0,1)]);
         
         switch (a_effect)
@@ -95,17 +115,16 @@ public class PlayerStatManagment : PlayerMain
                 StartCoroutine(CR_Flash());
                 break; 
             case "slimy":
-               StartCoroutine(CR_Slimy());
-               break;
+                StartCoroutine(CR_Slimy());
+                break;
             case "fire":
                 StartCoroutine(CR_Flame());
-               break;
+                break;
         }
-
-        if(Life<=0){
-            Die();
-        }
+        ClampHealth();
     }
+    
+    
     
     IEnumerator CR_Flash()
     {
@@ -147,24 +166,70 @@ public class PlayerStatManagment : PlayerMain
         PlayerMovement.PlayerController2D.m_MovementSmoothing = 0.05f;
     }
     
-    public void Heal(int a_Heal){
-        Life+=a_Heal;
-        if (Life > MaxLife)
-        {
-            Life = MaxLife;
-        }
-        HPUI.instance.ChangeHP(Life);
+    // Stam stuff
+    
+    public void LowerStam() {
+        Stam--;
+        ClampStam();
     }
 
-    private void Die(){
+    private void Update()
+    {
+        // regen stam
+        RegenStam();
+    }
+
+    private void RegenStam()
+    {
+        if (((CD + last_regen) <= Time.time))
+        {
+            last_regen = Time.time;
+            Stam += 1;
+            ClampStam();
+        }
+    }
+
+    public int getStam() {
+        return Stam;
+    }
+    public int getMaxStam() {
+        return MaxStam;
+    }
+    
+    void ClampStam() {
+        Stam = Mathf.Clamp(Stam, 0, MaxStam);
+        if (onStamChangedCallback != null)
+            onStamChangedCallback.Invoke();
+    }
+    
+
+    // death stuff
+    
+    IEnumerator CR_Death() {
+        m_Anim.SetTrigger("DeathTrigger");
         AudioManager.instance.playSound(sounds[2]);
+        yield return new WaitForSeconds(1f);
+        m_Anim.SetBool("Dead",true);
         LevelManager.instance.GameOver();
-        gameObject.SetActive(false);
+    }
+
+    public bool isNotDead() {
+        return !m_Anim.GetBool("Dead");
     }
 
     public void respawn() {
         transform.position = m_spawnPosition;
-        MaxLife = 10;
-        Life = MaxLife;
+        maxHealth = 10;
+        health = maxHealth;
+        numberOfCoin = 0;
+        Stam = MaxStam;
+        m_Anim.SetBool("Dead",false);
+        ClampHealth();
+        ClampStam();
+        ClampCoin();
     }
+   
+    
+    
+    
 }

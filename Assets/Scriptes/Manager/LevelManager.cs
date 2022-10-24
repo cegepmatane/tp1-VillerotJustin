@@ -18,7 +18,6 @@ public class LevelManager : MonoBehaviour
         UIManager _ui = GetComponent<UIManager>();
         if (_ui != null) {
             _ui.ToggleDeathScreen();
-            _ui.ToggleStatsUI();
             _ui.changeListener();
         }
     }
