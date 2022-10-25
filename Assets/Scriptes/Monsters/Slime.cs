@@ -67,7 +67,8 @@ public class Slime : Monster
     {
         if ((CD_Jump + last_jump) <= Time.time)
         {
-            jump();
+            m_Anim.SetTrigger("Jump");
+            StartCoroutine(CR_Jump());
             last_jump = Time.time;
         }
         
@@ -77,6 +78,7 @@ public class Slime : Monster
         {
             // ... flip the player.
             Flip();
+            m_LastJumpRight = m_JumpRight;
         }
     }
     
@@ -90,15 +92,14 @@ public class Slime : Monster
 		
     }
 
-    private void jump()
+    IEnumerator CR_Jump()
     {
         // jump
         m_JumpForce = Random.Range(250f, 500f);
         CD_Jump = Random.Range(2f, 10f);
         m_LastJumpRight = m_JumpRight;
         m_JumpRight = Random.value >= 0.5;
-        m_Anim.SetTrigger("Jump");
-        
+        yield return new WaitForSeconds(1f);
         GetComponent<Rigidbody2D>().AddForce(new Vector2(m_JumpRight ? -500f : 500f, m_JumpForce));
         PlaySound(m_jumpSound);
     }
