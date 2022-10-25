@@ -24,9 +24,9 @@ public class StatUI : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-        m_HPUI = GetComponentInChildren<HealthBarController>();
-        m_STAMUI = GetComponentInChildren<StaminaBarController>();
-        m_GOLG = GetComponentInChildren<GoldBarController>();
+        m_HPUI = GetComponentInChildren<HealthBarController>(true);
+        m_STAMUI = GetComponentInChildren<StaminaBarController>(true);
+        m_GOLG = GetComponentInChildren<GoldBarController>(true);
     }
 
 }

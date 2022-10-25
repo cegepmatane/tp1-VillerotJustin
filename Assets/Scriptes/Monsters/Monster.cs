@@ -74,7 +74,7 @@ public class Monster : MonoBehaviour
         m_Anim.SetTrigger("Hurt");
     }
     
-    private void Death()
+    public void Death()
     {
         PlaySound(m_DeathSound);
         GetComponent<CapsuleCollider2D>().enabled = false;

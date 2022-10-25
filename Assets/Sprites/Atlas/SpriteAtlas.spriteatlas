@@ -95,6 +95,7 @@ SpriteAtlas:
   - {fileID: 5410572983432652385, guid: 4f96c4525ce5ae1449814b81cb459d4b, type: 3}
   - {fileID: -1847289444461471078, guid: 4f96c4525ce5ae1449814b81cb459d4b, type: 3}
   - {fileID: -1923823714793028283, guid: 4f96c4525ce5ae1449814b81cb459d4b, type: 3}
+  - {fileID: 21300000, guid: 4793a852c5ff4e07889c26bd582ed245, type: 3}
   - {fileID: 5538832079964999464, guid: a66642622cb291c4cb98aa65996e78b2, type: 3}
   - {fileID: -1316755259967855847, guid: a66642622cb291c4cb98aa65996e78b2, type: 3}
   - {fileID: 2532082948406456646, guid: a66642622cb291c4cb98aa65996e78b2, type: 3}
@@ -919,6 +920,7 @@ SpriteAtlas:
   - Sprite Sheet - Green Jump Start-up_7
   - Sprite Sheet - Green Jump Start-up_4
   - Sprite Sheet - Green Jump Start-up_5
+  - GoldPanel_Pole
   - Sprite Sheet - Red Hurt - No Flash_9
   - Sprite Sheet - Red Hurt - No Flash_8
   - Sprite Sheet - Red Hurt - No Flash_1

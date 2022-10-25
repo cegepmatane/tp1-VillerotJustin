@@ -30,15 +30,16 @@ public class SpawnManager : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-        
-        SpawnSlime(spawnPoints[Random.Range(0, spawnPoints.Length-1)]);
-        last_Spawn = Time.time;
-        
+
+        if (CD_Spawn != 0) {
+            SpawnSlime(spawnPoints[Random.Range(0, spawnPoints.Length-1)]);
+            last_Spawn = Time.time;
+        }
+
     }
 
     private void Update() {
-        if (CD_Spawn + last_Spawn <= Time.time) {
-            Debug.Log("Update spawn slime");
+        if (CD_Spawn + last_Spawn <= Time.time && CD_Spawn != 0) {
             SpawnSlime(spawnPoints[Random.Range(0, spawnPoints.Length)]);
             SpawnSlime(spawnPoints[Random.Range(0, spawnPoints.Length)]);
             last_Spawn = Time.time;

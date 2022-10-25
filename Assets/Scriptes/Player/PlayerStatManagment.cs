@@ -210,7 +210,9 @@ public class PlayerStatManagment : PlayerMain
         AudioManager.instance.playSound(sounds[2]);
         yield return new WaitForSeconds(1f);
         m_Anim.SetBool("Dead",true);
+        yield return new WaitForSeconds(3f);
         LevelManager.instance.GameOver();
+        Time.timeScale = 0;
     }
 
     public bool isNotDead() {
@@ -218,7 +220,10 @@ public class PlayerStatManagment : PlayerMain
     }
 
     public void respawn() {
+        Time.timeScale = 1;
         transform.position = m_spawnPosition;
+        Debug.Log("respawn");
+        Debug.Log(m_spawnPosition.ToString());
         maxHealth = 10;
         health = maxHealth;
         numberOfCoin = 0;

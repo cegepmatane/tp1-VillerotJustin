@@ -7,18 +7,20 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
 
+    public UIManager UIManager;
+
     private void Awake() {
         if (instance == null ) {
-            instance = this;
+            instance = this;;
+            DontDestroyOnLoad(this);
         } else
         Destroy(gameObject);
+        UIManager = GetComponent<UIManager>();
     }
 
     public void GameOver() {
-        UIManager _ui = GetComponent<UIManager>();
-        if (_ui != null) {
-            _ui.ToggleDeathScreen();
-            _ui.changeListener();
+        if (UIManager != null) {
+            UIManager.ToggleDeathScreen();
         }
     }
 }

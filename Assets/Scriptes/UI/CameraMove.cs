@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraMove : MonoBehaviour {
     public float damping = 1.5f;
@@ -13,14 +14,13 @@ public class CameraMove : MonoBehaviour {
     private Camera _cam;
 
     void Start() {
-        _target = PlayerStatManagment.instance.transform;
+        if (PlayerStatManagment.instance && !SceneManager.GetActiveScene().name.Equals("Main_Menu")) _target = PlayerStatManagment.instance.transform;
+        else {
+            _target = FindObjectOfType<Camera>().GetComponent<Transform>();
+        }
         offset = new Vector2(Mathf.Abs(offset.x), offset.y);
         FindPlayer();
         _cam = gameObject.GetComponent<Camera>();
-        if (gameObject.tag.Equals("MainCamera")) {
-            UIManager _ui = LevelManager.instance.GetComponent<UIManager>();
-            _ui.m_camera = GetComponent<AudioListener>();
-        }
     }
 
     public void FindPlayer()
