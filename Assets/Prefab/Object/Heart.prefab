@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 792902934944769389e7ee581e51abd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Gather: {fileID: 0}
+  Gather: {fileID: 8300000, guid: 0988de8cda151455b96ea527100a0d22, type: 3}
 --- !u!60 &3301882129801387646
 PolygonCollider2D:
   m_ObjectHideFlags: 0

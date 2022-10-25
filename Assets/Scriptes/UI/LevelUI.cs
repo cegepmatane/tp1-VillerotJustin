@@ -9,6 +9,7 @@ public class LevelUI : MonoBehaviour {
     public GameObject m_PauseUI;
     public GameObject m_DeathUI;
     public GameObject m_MainMenuUI;
+    public GameObject m_WinUI;
     
     public static LevelUI instance { get; private set; }
         
@@ -27,12 +28,19 @@ public class LevelUI : MonoBehaviour {
         }
 
         foreach (RectTransform rectTransform in GetComponentsInChildren<RectTransform>(true)) {
-            if (rectTransform.gameObject.name.Equals("PauseCanva")) {
-                m_PauseUI = rectTransform.gameObject;
-            } else if (rectTransform.gameObject.name.Equals("DeathCanva")) {
-                m_DeathUI = rectTransform.gameObject;
-            }else if (rectTransform.gameObject.name.Equals("MenuUI")) {
-                m_MainMenuUI = rectTransform.gameObject;
+            switch (rectTransform.gameObject.name) {
+                case "PauseCanva":
+                    m_PauseUI = rectTransform.gameObject;
+                    break;
+                case "DeathCanva":
+                    m_DeathUI = rectTransform.gameObject;
+                    break;
+                case "MenuCanva":
+                    m_MainMenuUI = rectTransform.gameObject;
+                    break;
+                case "WinCanva":
+                    m_WinUI = rectTransform.gameObject;
+                    break;
             }
             
         }

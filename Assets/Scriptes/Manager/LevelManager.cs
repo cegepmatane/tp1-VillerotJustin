@@ -18,6 +18,14 @@ public class LevelManager : MonoBehaviour
         UIManager = GetComponent<UIManager>();
     }
 
+    public void WinGame() {
+        if (UIManager != null) {
+            UIManager.ToggleWinScreen();
+        }
+        Time.timeScale = 0;
+
+    }
+    
     public void GameOver() {
         if (UIManager != null) {
             UIManager.ToggleDeathScreen();

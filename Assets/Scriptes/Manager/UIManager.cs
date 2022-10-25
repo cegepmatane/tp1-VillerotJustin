@@ -5,19 +5,24 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour {
 
+    public LevelUI LevelUI;
+
+    private void Start() {
+        LevelUI = LevelUI.instance;
+    }
 
     public void ToggleDeathScreen() {
-        LevelUI.instance.m_DeathUI.SetActive(!LevelUI.instance.m_DeathUI.activeSelf);
+        LevelUI.m_DeathUI.SetActive(!LevelUI.m_DeathUI.activeSelf);
         ToggleStatUI();
     }
     
     public void TogglePauseScreen() {
-        LevelUI.instance.m_PauseUI.SetActive(!LevelUI.instance.m_PauseUI.activeSelf);
+        LevelUI.m_PauseUI.SetActive(!LevelUI.m_PauseUI.activeSelf);
         ToggleStatUI();
     }
     
     public void ToggleMainMenu() {
-        LevelUI.instance.m_MainMenuUI.SetActive(!LevelUI.instance.m_MainMenuUI.activeSelf);
+        LevelUI.m_MainMenuUI.SetActive(!LevelUI.m_MainMenuUI.activeSelf);
     }
 
 
@@ -27,9 +32,12 @@ public class UIManager : MonoBehaviour {
 
     public void ToggleGameScreen(bool val) {
         if (StatUI.instance) StatUI.instance.gameObject.SetActive(val);
-        LevelUI.instance.m_DeathUI.SetActive(false);
-        LevelUI.instance.m_PauseUI.SetActive(false);
-        
+        LevelUI.m_DeathUI.SetActive(false);
+        LevelUI.m_PauseUI.SetActive(false);
+    }
+    
+    public void ToggleWinScreen() {
+        LevelUI.m_WinUI.SetActive(!LevelUI.m_WinUI.activeSelf);
     }
     
     

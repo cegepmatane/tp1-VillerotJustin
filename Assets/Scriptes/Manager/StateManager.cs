@@ -18,7 +18,8 @@ public class StateManager : MonoBehaviour {
     }
     
     public void RealoadCurrentScene() {
-        UIManager.ToggleDeathScreen();
+        if (UIManager.LevelUI.m_WinUI.activeSelf) UIManager.ToggleWinScreen();
+        if (UIManager.LevelUI.m_DeathUI.activeSelf) UIManager.ToggleDeathScreen();
         Time.timeScale = 1;
         PlayerStatManagment.instance.respawn();
     }

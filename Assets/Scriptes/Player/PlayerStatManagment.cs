@@ -2,12 +2,13 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 using System.Collections;
+using UnityEngine.SceneManagement;
 using UnityEngine.PlayerLoop;
 
 
-public class PlayerStatManagment : PlayerMain
-{
+public class PlayerStatManagment : PlayerMain {
 
+    private bool asWin = false;
     public static PlayerStatManagment instance { get; private set; }
     private Vector3 m_spawnPosition;
 
@@ -37,7 +38,7 @@ public class PlayerStatManagment : PlayerMain
     // coin var
     public delegate void OnGoldChangedCallback();
     public OnGoldChangedCallback onGoldChangedCallback;
-    private int numberOfCoin;
+    public int numberOfCoin;
     public float getNumberOfCoin { get { return numberOfCoin; } }
 
     public void incrementCoin() {
@@ -71,7 +72,7 @@ public class PlayerStatManagment : PlayerMain
         health = maxHealth;
         maxTotalHealth = 10;
     }
-    
+
     // Heatlth stuff
     
     
@@ -177,6 +178,12 @@ public class PlayerStatManagment : PlayerMain
     {
         // regen stam
         RegenStam();
+        
+        if (SceneManager.GetActiveScene().name.Equals("Game_platform") && numberOfCoin >= 100 && !asWin) {
+            Debug.Log("win");
+            LevelManager.instance.WinGame();
+            asWin = true;
+        }
     }
 
     private void RegenStam()
@@ -229,6 +236,7 @@ public class PlayerStatManagment : PlayerMain
         numberOfCoin = 0;
         Stam = MaxStam;
         m_Anim.SetBool("Dead",false);
+        asWin = false;
         ClampHealth();
         ClampStam();
         ClampCoin();
