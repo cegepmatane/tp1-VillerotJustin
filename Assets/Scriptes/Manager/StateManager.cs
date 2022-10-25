@@ -22,6 +22,7 @@ public class StateManager : MonoBehaviour {
         if (UIManager.LevelUI.m_DeathUI.activeSelf) UIManager.ToggleDeathScreen();
         Time.timeScale = 1;
         PlayerStatManagment.instance.respawn();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ChangeSceneByName(String _name) {
