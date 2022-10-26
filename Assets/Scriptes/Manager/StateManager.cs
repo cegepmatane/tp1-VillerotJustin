@@ -26,7 +26,7 @@ public class StateManager : MonoBehaviour {
     }
 
     public void ChangeSceneByName(String _name) {
-        switch ((1 * (LevelUI.instance.m_DeathUI.activeSelf ? 2 : 1) * (LevelUI.instance.m_PauseUI.activeSelf ? 3 : 1) * (LevelUI.instance.m_MainMenuUI.activeSelf ? 10 : 1))) {
+        switch ((1 * (LevelUI.instance.m_DeathUI.activeSelf ? 2 : 1) * (LevelUI.instance.m_PauseUI.activeSelf ? 3 : 1) * (LevelUI.instance.m_MainMenuUI.activeSelf ? 10 : 1)*(LevelUI.instance.m_WinUI.activeSelf ? 7 : 1))) {
             case 2:
                 UIManager.ToggleDeathScreen();
                 break;
@@ -36,7 +36,9 @@ public class StateManager : MonoBehaviour {
             case 10:
                 UIManager.ToggleMainMenu();
                 break;
-            
+            case 7:
+                UIManager.ToggleWinScreen();
+                break;
         }
         if (_name != null) {
             if (_name.Equals("Main_Menu")) {

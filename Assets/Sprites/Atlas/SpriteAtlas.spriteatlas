@@ -482,6 +482,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 5728856b4e4e24d2194f29f07a311354, type: 3}
   - {fileID: 21300000, guid: 6936896b6e75693fb919c077aadd339f, type: 3}
   - {fileID: 21300000, guid: bdced87b2f7f8ea9396435ffc6466fbb, type: 3}
+  - {fileID: 21300000, guid: a61f9e7b9fa6f9bad8aaf7173cd9e180, type: 3}
   - {fileID: 21300000, guid: 046a978bdf663f1e39e8d2682ad34ec0, type: 3}
   - {fileID: 21300000, guid: 49b626aba77203986a33fd2017eff742, type: 3}
   - {fileID: 21300000, guid: 8cf0d7ab187e162769f5307aa5b68876, type: 3}
@@ -829,6 +830,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 2c543c1f3bdc530e2832262752d41010, type: 3}
   - {fileID: 21300000, guid: 7d94bd1f978b8ced78b6bd0cf6d6778c, type: 3}
   - {fileID: 21300000, guid: 42c3402f8b87cc112bd35c15220c494c, type: 3}
+  - {fileID: 21300000, guid: a407b92fec96271e29ab85e408e0ceee, type: 3}
   - {fileID: 21300000, guid: fe5b313ffd92129d1b26f13f8ad80e14, type: 3}
   - {fileID: 21300000, guid: 934d773f096874824bd544d55c4d8538, type: 3}
   - {fileID: 21300000, guid: d19dbd3f8cadecc5e8432bbb60c8d2ed, type: 3}
@@ -859,6 +861,7 @@ SpriteAtlas:
   - {fileID: -822294439341482929, guid: 324a09dfec4299c4bb2e56386d91262b, type: 3}
   - {fileID: 775961440259190869, guid: 324a09dfec4299c4bb2e56386d91262b, type: 3}
   - {fileID: 8373471702286915353, guid: 324a09dfec4299c4bb2e56386d91262b, type: 3}
+  - {fileID: 21300000, guid: c6b82edf869ccfef29a46b8c450547de, type: 3}
   - {fileID: 21300000, guid: b7ff4bef6139ae920a69e82c9867b3c7, type: 3}
   - {fileID: 21300000, guid: ed64f9ff048ad97d68e71ede20208d65, type: 3}
   - {fileID: -1753366007731108112, guid: 563bbaff281b5a2438c2b0e6652bf92e, type: 3}
@@ -1307,6 +1310,7 @@ SpriteAtlas:
   - adventurer-punch-02
   - MovinPlatform2
   - adventurer-wall-run-01
+  - GhostWitch
   - adventurer-air-attack2-02
   - adventurer-attack1-01
   - adventurer-run3-01
@@ -1654,6 +1658,7 @@ SpriteAtlas:
   - adventurer-knock-dwn-01
   - adventurer-swrd-drw-00
   - adventurer-crouch-02
+  - 413-4138875_large-text-box-speech-bubbles-bubble-text-png
   - adventurer-die-03
   - sky
   - adventurer-die-02
@@ -1684,6 +1689,7 @@ SpriteAtlas:
   - Sprite Sheet - Green Jump to Fall_2
   - Sprite Sheet - Green Jump to Fall_3
   - Sprite Sheet - Green Jump to Fall_4
+  - unnamed
   - adventurer-swrd-drw-03
   - adventurer-walk-04
   - Sprite Sheet - Red Jump to Fall_4

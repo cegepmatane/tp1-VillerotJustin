@@ -20,7 +20,7 @@ public class PlayerMovement : PlayerMain
     [SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
     [SerializeField] private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
     const float k_Radius = .2f;
-    [SerializeField] private Transform feetPosition;
+    private Transform feetPosition;
 
     
     private void Awake()
